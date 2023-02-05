@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220306 15:51:23.884" rpa="false" schemaversion="2">
+<suite id="s1" name="APILearn" source="D:\Documents\Studies\robotLearning\APILearn">
+<suite id="s1-s1" name="Robot DemoAPI" source="D:\Documents\Studies\robotLearning\APILearn\Robot_DemoAPI">
+<suite id="s1-s1-s1" name="TestCasesAPIRequests" source="D:\Documents\Studies\robotLearning\APILearn\Robot_DemoAPI\TestCasesAPIRequests.robot">
+<test id="s1-s1-s1-t1" name="Cenário 01: Consulta de endereço existente">
+<kw name="Dado que esteja conectado no webservice de consultas de CEP" library="BDDpt-br" sourcename="Dado ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Que esteja conectado no webservice de consultas de CEP" library="Resource">
+<kw name="Conecta ao WebService" library="Resource">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>consultaCEP</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220306 15:51:24.248" level="INFO">Creating Session using : alias=consultaCEP, url=https://webmaniabr.com/api/1/cep, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220306 15:51:24.247" endtime="20220306 15:51:24.249"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.247" endtime="20220306 15:51:24.249"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.245" endtime="20220306 15:51:24.250"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.244" endtime="20220306 15:51:24.250"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.242" endtime="20220306 15:51:24.251"/>
+</kw>
+<kw name="Quando o usuário consultar o CEP &quot;88056-000&quot;" library="BDDpt-br" sourcename="Quando ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="o usuário consultar o CEP &quot;88056-000&quot;" library="Resource" sourcename="O usuário consultar o CEP &quot;${CEP_CONSULTADO}&quot;">
+<kw name="Realiza requisição do CEP" library="Resource">
+<arg>${CEP_CONSULTADO}</arg>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>consultaCEP</arg>
+<arg>/${CEP_DESEJADO}/?app_key=${APP_KEY}&amp;app_secret=${APP_SECRET}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20220306 15:51:24.260" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20220306 15:51:25.343" level="INFO">GET Request : url=https://webmaniabr.com/api/1/cep/88056-000/?app_key=njMf2EiyQ17g6C3vLUxk1yEsWTforVqf&amp;app_secret=EgpTuUcM93IqHY8icgR3cK6Cn4bOlkQwSlfLd6ryMjrhhwMW 
+ path_url=/api/1/cep/88056-000/?app_key=njMf2EiyQ17g6C3vLUxk1yEsWTforVqf&amp;app_secret=EgpTuUcM93IqHY8icgR3cK6Cn4bOlkQwSlfLd6ryMjrhhwMW 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220306 15:51:25.343" level="INFO">GET Response : url=https://webmaniabr.com/api/1/cep/88056-000/?app_key=njMf2EiyQ17g6C3vLUxk1yEsWTforVqf&amp;app_secret=EgpTuUcM93IqHY8icgR3cK6Cn4bOlkQwSlfLd6ryMjrhhwMW 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 06 Mar 2022 18:51:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'nginx/1.20.1', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE', 'Access-Control-Allow-Headers': 'Content-Type, X-Consumer-Key, X-Consumer-Secret, X-Access-Token, X-Access-Token-Secret, cache-control, Origin, X-Requested-With, Accept', 'Expires': 'on, 01 Jan 1970 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'Pragma': 'no-cache', 'X-Robots-Tag': 'noindex', 'Set-Cookie': 'PHPSESSID=4tmiqgoormht8c2nnpq47s06pj; path=/', 'Last-Modified': 'Sun, 06 Mar 2022 18:51:25 GMT', 'X-Powered-By': 'WMBR'} 
+ body={"endereco":"Avenida Luiz Boiteux Piazza","bairro":"Cachoeira do Bom Jesus","cidade":"Florianópolis","uf":"SC","cep":"88056000","ibge":"4205407"} 
+ </msg>
+<msg timestamp="20220306 15:51:25.345" level="INFO">C:\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'webmaniabr.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220306 15:51:25.345" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220306 15:51:24.257" endtime="20220306 15:51:25.345"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Resposta: ${RESPOSTA.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220306 15:51:25.347" level="INFO">Resposta: {"endereco":"Avenida Luiz Boiteux Piazza","bairro":"Cachoeira do Bom Jesus","cidade":"Florianópolis","uf":"SC","cep":"88056000","ibge":"4205407"}</msg>
+<status status="PASS" starttime="20220306 15:51:25.346" endtime="20220306 15:51:25.347"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220306 15:51:25.348" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220306 15:51:25.348" endtime="20220306 15:51:25.349"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.255" endtime="20220306 15:51:25.349"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.254" endtime="20220306 15:51:25.349"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.253" endtime="20220306 15:51:25.349"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.252" endtime="20220306 15:51:25.350"/>
+</kw>
+<kw name="Então deve ser mostrado o endereço &quot;Avenida Luiz Boiteux Piazza&quot;" library="BDDpt-br" sourcename="Então ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="deve ser mostrado o endereço &quot;Avenida Luiz Boiteux Piazza&quot;" library="Resource" sourcename="Deve ser mostrado o endereço &quot;${ENDERECO}&quot;">
+<kw name="Confere o status code" library="Resource">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUS_ESPERADO}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220306 15:51:25.357" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220306 15:51:25.354" endtime="20220306 15:51:25.359"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Status Code Retornado: ${RESPOSTA.status_code} -- Status Code Esperado: ${STATUS_ESPERADO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220306 15:51:25.362" level="INFO">Status Code Retornado: 200 -- Status Code Esperado: 200</msg>
+<status status="PASS" starttime="20220306 15:51:25.359" endtime="20220306 15:51:25.362"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.352" endtime="20220306 15:51:25.362"/>
+</kw>
+<kw name="Confere endereço do CEP" library="Resource">
+<arg>${ENDERECO}</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>endereco</arg>
+<arg>${ENDERECO}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20220306 15:51:25.362" endtime="20220306 15:51:25.364"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.362" endtime="20220306 15:51:25.364"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.351" endtime="20220306 15:51:25.364"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.351" endtime="20220306 15:51:25.364"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.350" endtime="20220306 15:51:25.365"/>
+</kw>
+<kw name="E deve ser mostrado o bairro &quot;Cachoeira do Bom Jesus&quot;" library="BDDpt-br" sourcename="E ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="deve ser mostrado o bairro &quot;Cachoeira do Bom Jesus&quot;" library="Resource" sourcename="Deve ser mostrado o bairro &quot;${BAIRRO}&quot;">
+<kw name="Confere bairro do CEP" library="Resource">
+<arg>${BAIRRO}</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>bairro</arg>
+<arg>${BAIRRO}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20220306 15:51:25.367" endtime="20220306 15:51:25.369"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.366" endtime="20220306 15:51:25.369"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.366" endtime="20220306 15:51:25.371"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.365" endtime="20220306 15:51:25.371"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.365" endtime="20220306 15:51:25.371"/>
+</kw>
+<kw name="E deve ser mostrada a cidade &quot;Florianópolis&quot;" library="BDDpt-br" sourcename="E ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="deve ser mostrada a cidade &quot;Florianópolis&quot;" library="Resource" sourcename="Deve ser mostrada a cidade &quot;${CIDADE}&quot;">
+<kw name="Confere cidade do CEP" library="Resource">
+<arg>${CIDADE}</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>cidade</arg>
+<arg>${CIDADE}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20220306 15:51:25.380" endtime="20220306 15:51:25.381"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.378" endtime="20220306 15:51:25.382"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.377" endtime="20220306 15:51:25.382"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.375" endtime="20220306 15:51:25.382"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.371" endtime="20220306 15:51:25.382"/>
+</kw>
+<kw name="E deve ser mostrada a UF &quot;SC&quot;" library="BDDpt-br" sourcename="E ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="deve ser mostrada a UF &quot;SC&quot;" library="Resource" sourcename="Deve ser mostrada a UF &quot;${UF}&quot;">
+<kw name="Confere UF do CEP" library="Resource">
+<arg>${UF}</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>uf</arg>
+<arg>${UF}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20220306 15:51:25.386" endtime="20220306 15:51:25.391"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.384" endtime="20220306 15:51:25.392"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.384" endtime="20220306 15:51:25.392"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.383" endtime="20220306 15:51:25.392"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.383" endtime="20220306 15:51:25.393"/>
+</kw>
+<kw name="E deve ser mostrado o CEP &quot;88056000&quot;" library="BDDpt-br" sourcename="E ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="deve ser mostrado o CEP &quot;88056000&quot;" library="Resource" sourcename="Deve ser mostrado o CEP &quot;${CEP}&quot;">
+<kw name="Confere CEP" library="Resource">
+<arg>${CEP}</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>cep</arg>
+<arg>${CEP}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20220306 15:51:25.396" endtime="20220306 15:51:25.397"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.396" endtime="20220306 15:51:25.398"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.395" endtime="20220306 15:51:25.398"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.395" endtime="20220306 15:51:25.398"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.394" endtime="20220306 15:51:25.398"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:24.240" endtime="20220306 15:51:25.399"/>
+</test>
+<test id="s1-s1-s1-t2" name="Cenário 03: Consulta de endereço inexistente">
+<kw name="Dado que esteja conectado no webservice de consultas de CEP" library="BDDpt-br" sourcename="Dado ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Que esteja conectado no webservice de consultas de CEP" library="Resource">
+<kw name="Conecta ao WebService" library="Resource">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>consultaCEP</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220306 15:51:25.414" level="INFO">Creating Session using : alias=consultaCEP, url=https://webmaniabr.com/api/1/cep, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220306 15:51:25.403" endtime="20220306 15:51:25.415"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.402" endtime="20220306 15:51:25.415"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.401" endtime="20220306 15:51:25.415"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.401" endtime="20220306 15:51:25.416"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.400" endtime="20220306 15:51:25.416"/>
+</kw>
+<kw name="Quando o usuário consultar o CEP &quot;99999-999&quot;" library="BDDpt-br" sourcename="Quando ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="o usuário consultar o CEP &quot;99999-999&quot;" library="Resource" sourcename="O usuário consultar o CEP &quot;${CEP_CONSULTADO}&quot;">
+<kw name="Realiza requisição do CEP" library="Resource">
+<arg>${CEP_CONSULTADO}</arg>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>consultaCEP</arg>
+<arg>/${CEP_DESEJADO}/?app_key=${APP_KEY}&amp;app_secret=${APP_SECRET}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20220306 15:51:25.419" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20220306 15:51:26.826" level="INFO">GET Request : url=https://webmaniabr.com/api/1/cep/99999-999/?app_key=njMf2EiyQ17g6C3vLUxk1yEsWTforVqf&amp;app_secret=EgpTuUcM93IqHY8icgR3cK6Cn4bOlkQwSlfLd6ryMjrhhwMW 
+ path_url=/api/1/cep/99999-999/?app_key=njMf2EiyQ17g6C3vLUxk1yEsWTforVqf&amp;app_secret=EgpTuUcM93IqHY8icgR3cK6Cn4bOlkQwSlfLd6ryMjrhhwMW 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220306 15:51:26.826" level="INFO">GET Response : url=https://webmaniabr.com/api/1/cep/99999-999/?app_key=njMf2EiyQ17g6C3vLUxk1yEsWTforVqf&amp;app_secret=EgpTuUcM93IqHY8icgR3cK6Cn4bOlkQwSlfLd6ryMjrhhwMW 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 06 Mar 2022 18:51:26 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'nginx/1.20.1', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE', 'Access-Control-Allow-Headers': 'Content-Type, X-Consumer-Key, X-Consumer-Secret, X-Access-Token, X-Access-Token-Secret, cache-control, Origin, X-Requested-With, Accept', 'Expires': 'on, 01 Jan 1970 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'Pragma': 'no-cache', 'X-Robots-Tag': 'noindex', 'Set-Cookie': 'PHPSESSID=7vr18ajl75paluc4sc9heguqgr; path=/', 'Last-Modified': 'Sun, 06 Mar 2022 18:51:26 GMT', 'X-Powered-By': 'WMBR'} 
+ body={"error":"CEP INVÁLIDO"} 
+ </msg>
+<msg timestamp="20220306 15:51:26.826" level="INFO">C:\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'webmaniabr.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220306 15:51:26.827" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220306 15:51:25.419" endtime="20220306 15:51:26.827"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Resposta: ${RESPOSTA.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220306 15:51:26.829" level="INFO">Resposta: {"error":"CEP INVÁLIDO"}</msg>
+<status status="PASS" starttime="20220306 15:51:26.828" endtime="20220306 15:51:26.829"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220306 15:51:26.829" level="INFO">${RESPOSTA} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220306 15:51:26.829" endtime="20220306 15:51:26.829"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.418" endtime="20220306 15:51:26.829"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.417" endtime="20220306 15:51:26.830"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.417" endtime="20220306 15:51:26.830"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.416" endtime="20220306 15:51:26.830"/>
+</kw>
+<kw name="Então a mensagem de erro &quot;CEP INVÁLIDO&quot; deve ser retornada" library="BDDpt-br" sourcename="Então ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="a mensagem de erro &quot;CEP INVÁLIDO&quot; deve ser retornada" library="Resource" sourcename="A mensagem de erro &quot;${MSG_ERRO}&quot; deve ser retornada">
+<kw name="Confere o status code" library="Resource">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUS_ESPERADO}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220306 15:51:26.833" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220306 15:51:26.832" endtime="20220306 15:51:26.833"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Status Code Retornado: ${RESPOSTA.status_code} -- Status Code Esperado: ${STATUS_ESPERADO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220306 15:51:26.834" level="INFO">Status Code Retornado: 200 -- Status Code Esperado: 200</msg>
+<status status="PASS" starttime="20220306 15:51:26.833" endtime="20220306 15:51:26.834"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:26.832" endtime="20220306 15:51:26.834"/>
+</kw>
+<kw name="Confere mensagem de erro" library="Resource">
+<arg>${MSG_ERRO}</arg>
+<kw name="Dictionary Should Contain Item" library="Collections">
+<arg>${RESPOSTA.json()}</arg>
+<arg>error</arg>
+<arg>${MSG_ERRO}</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" starttime="20220306 15:51:26.835" endtime="20220306 15:51:26.835"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:26.834" endtime="20220306 15:51:26.836"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:26.831" endtime="20220306 15:51:26.836"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:26.831" endtime="20220306 15:51:26.836"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:26.830" endtime="20220306 15:51:26.836"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:25.400" endtime="20220306 15:51:26.836"/>
+</test>
+<kw name="Após toda a suite" library="Resource" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220306 15:51:27.842" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220306 15:51:26.837" endtime="20220306 15:51:27.843"/>
+</kw>
+<kw name="Organizando" library="func">
+<status status="PASS" starttime="20220306 15:51:27.843" endtime="20220306 15:51:27.844"/>
+</kw>
+<status status="PASS" starttime="20220306 15:51:26.837" endtime="20220306 15:51:27.845"/>
+</kw>
+<doc>Suíte de Exemplo de testes API com o Robot Framework</doc>
+<status status="PASS" starttime="20220306 15:51:23.999" endtime="20220306 15:51:27.845"/>
+</suite>
+<status status="PASS" starttime="20220306 15:51:23.992" endtime="20220306 15:51:27.848"/>
+</suite>
+<status status="PASS" starttime="20220306 15:51:23.920" endtime="20220306 15:51:27.850"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="APILearn">APILearn</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Robot DemoAPI">APILearn.Robot DemoAPI</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="TestCasesAPIRequests">APILearn.Robot DemoAPI.TestCasesAPIRequests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220306 15:51:24.260" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20220306 15:51:25.419" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>

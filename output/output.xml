@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220301 21:49:16.775" rpa="false" schemaversion="2">
+<suite id="s1" name="Amazon Test Gherkin Bdd" source="d:\Documents\temp\RobotFramework\amazon_test_gherkin_bdd.robot">
+<kw name="Antes de toda a suite" library="amazon_resources" type="SETUP">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220301 21:49:18.257" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220301 21:49:17.250" endtime="20220301 21:49:18.264"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:17.250" endtime="20220301 21:49:18.264"/>
+</kw>
+<test id="s1-t1" name="Caso de Teste 01 - Acesso ao menu &quot;Eletrônicos&quot;">
+<kw name="Abrir o navegador" library="amazon_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220301 21:49:18.266" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220301 21:49:18.265" endtime="20220301 21:49:19.499"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220301 21:49:19.499" endtime="20220301 21:49:19.624"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:18.265" endtime="20220301 21:49:19.624"/>
+</kw>
+<kw name="Dado que estou na homepage da Amazon.com.br" library="amazon_resources">
+<kw name="Acessar a home page do site Amazon.com.br" library="amazon_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220301 21:49:19.625" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20220301 21:49:19.625" endtime="20220301 21:49:21.154"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGO_SITE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 21:49:21.155" endtime="20220301 21:49:21.197"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:19.625" endtime="20220301 21:49:21.197"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:19.624" endtime="20220301 21:49:21.198"/>
+</kw>
+<kw name="Quando acessar o menu &quot;Eletrônicos&quot;" library="amazon_resources" sourcename="Quando acessar o menu &quot;${MENU}&quot;">
+<kw name="Entrar no menu &quot;${MENU}&quot;" library="amazon_resources" sourcename="Entrar no menu &quot;${MENU}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TODOS_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 21:49:21.203" level="INFO">Clicking element '//a[contains(@role,'button')]'.</msg>
+<status status="PASS" starttime="20220301 21:49:21.202" endtime="20220301 21:49:22.179"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VER_TUDO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 21:49:22.181" endtime="20220301 21:49:22.217"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VER_TUDO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 21:49:22.217" level="INFO">Clicking element '(//a[contains(.,'ver tudo')])[1]'.</msg>
+<status status="PASS" starttime="20220301 21:49:22.217" endtime="20220301 21:49:22.306"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_ELETRONICOS_TV_AUDIO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 21:49:22.307" endtime="20220301 21:49:22.581"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_ELETRONICOS_TV_AUDIO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 21:49:22.582" level="INFO">Clicking element '//a[@class='hmenu-item'][contains(.,'Eletrônicos, TV e Áudio')]'.</msg>
+<status status="PASS" starttime="20220301 21:49:22.581" endtime="20220301 21:49:22.721"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_TUDO_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 21:49:22.722" endtime="20220301 21:49:22.756"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_TUDO_ELETRONICOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220301 21:49:22.757" level="INFO">Clicking element '//a[contains(.,'Tudo em Eletrônicos')]'.</msg>
+<status status="PASS" starttime="20220301 21:49:22.756" endtime="20220301 21:49:23.542"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:21.200" endtime="20220301 21:49:23.543"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:21.199" endtime="20220301 21:49:23.543"/>
+</kw>
+<kw name="Então o título da pagina deve ficar &quot;Eletrônicos e Tecnologia&quot;" library="amazon_resources" sourcename="Então o título da pagina deve ficar &quot;${TITULO}&quot;">
+<kw name="Verificar se o título da página fica &quot;${TITULO}&quot;" library="amazon_resources" sourcename="Verificar se o título da página fica &quot;${TITULO-H1}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//h1[contains(.,'${TITULO-H1}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 21:49:23.544" endtime="20220301 21:49:24.338"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220301 21:49:24.562" level="INFO">${title} = Eletrônicos e Tecnologia | Amazon.com.br</msg>
+<status status="PASS" starttime="20220301 21:49:24.338" endtime="20220301 21:49:24.562"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220301 21:49:24.563" level="INFO">Eletrônicos e Tecnologia | Amazon.com.br</msg>
+<status status="PASS" starttime="20220301 21:49:24.563" endtime="20220301 21:49:24.564"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${title}</arg>
+<arg>${TITULO-H1}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220301 21:49:24.564" endtime="20220301 21:49:24.564"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:23.544" endtime="20220301 21:49:24.564"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:23.544" endtime="20220301 21:49:24.564"/>
+</kw>
+<kw name="E o texto &quot;Eletrônicos e Tecnologia&quot; deve ser exibido na página" library="amazon_resources" sourcename="E o texto &quot;${FRASE}&quot; deve ser exibido na página">
+<kw name="Verificar se aparece a frase &quot;${FRASE}&quot;" library="amazon_resources" sourcename="Verificar se aparece a frase &quot;${FRASE}&quot;">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${FRASE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220301 21:49:24.568" endtime="20220301 21:49:24.737"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:24.568" endtime="20220301 21:49:24.737"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:24.566" endtime="20220301 21:49:24.737"/>
+</kw>
+<kw name="E a categoria &quot;Computadores e Informática&quot; deve ser exibida na página" library="amazon_resources" sourcename="E a categoria &quot;${NOME_CATEGORIA}&quot; deve ser exibida na página">
+<kw name="Verficar se aparece a categoria &quot;${NOME_CATEGORIA}&quot;" library="amazon_resources" sourcename="Verficar se aparece a categoria &quot;${NOME_CATEGORIA}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[@aria-label='${NOME_CATEGORIA}']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 21:49:24.739" endtime="20220301 21:49:25.090"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//a[@aria-label='${NOME_CATEGORIA}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220301 21:49:25.302" level="INFO">Element '//a[@aria-label='Computadores e Informática']' is displayed.</msg>
+<status status="PASS" starttime="20220301 21:49:25.090" endtime="20220301 21:49:25.302"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:24.738" endtime="20220301 21:49:25.303"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:24.738" endtime="20220301 21:49:25.303"/>
+</kw>
+<kw name="E a categoria &quot;PC Gamer&quot; deve ser exibida na página" library="amazon_resources" sourcename="E a categoria &quot;${NOME_CATEGORIA}&quot; deve ser exibida na página">
+<kw name="Verficar se aparece a categoria &quot;${NOME_CATEGORIA}&quot;" library="amazon_resources" sourcename="Verficar se aparece a categoria &quot;${NOME_CATEGORIA}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[@aria-label='${NOME_CATEGORIA}']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220301 21:49:25.304" endtime="20220301 21:49:25.462"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//a[@aria-label='${NOME_CATEGORIA}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220301 21:49:25.574" level="INFO">Element '//a[@aria-label='PC Gamer']' is displayed.</msg>
+<status status="PASS" starttime="20220301 21:49:25.463" endtime="20220301 21:49:25.575"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:25.304" endtime="20220301 21:49:25.575"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:25.304" endtime="20220301 21:49:25.575"/>
+</kw>
+<kw name="Fechar o navegador" library="amazon_resources" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220301 21:49:25.577" endtime="20220301 21:49:27.890"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:25.577" endtime="20220301 21:49:27.890"/>
+</kw>
+<doc>Esse teste verifica o menu eletrônicos do site da amazon.com.br
+e verifica a categoria "Computadores e Informática"</doc>
+<tag>categorias</tag>
+<tag>menus</tag>
+<status status="PASS" starttime="20220301 21:49:18.264" endtime="20220301 21:49:27.891"/>
+</test>
+<kw name="Após toda a suite" library="amazon_resources" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220301 21:49:28.904" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220301 21:49:27.896" endtime="20220301 21:49:28.905"/>
+</kw>
+<kw name="Organizando" library="func">
+<msg timestamp="20220301 21:49:28.907" level="INFO">[WinError 32] O arquivo já está sendo usado por outro processo: 'D:\\Documents\\temp\\RobotFramework\\output.xml'</msg>
+<status status="PASS" starttime="20220301 21:49:28.905" endtime="20220301 21:49:28.907"/>
+</kw>
+<status status="PASS" starttime="20220301 21:49:27.894" endtime="20220301 21:49:28.907"/>
+</kw>
+<doc>Essa suite testa o site da Amazon.com</doc>
+<status status="PASS" starttime="20220301 21:49:16.778" endtime="20220301 21:49:28.908"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">categorias</stat>
+<stat pass="1" fail="0" skip="0">menus</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Amazon Test Gherkin Bdd">Amazon Test Gherkin Bdd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

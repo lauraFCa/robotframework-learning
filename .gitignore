@@ -1,0 +1,7 @@
+../__pycache__/*
+*/resources/__pycache__/func.cpython-310.pyc
+venv
+*/node_modules
+*.out
+
+.vscode

@@ -1,0 +1,7 @@
+datasources:1cd34161e7de2fe8e96b2285842dc3d5a0b8ca4a
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:e859fc5cab42be0be2636e7c8d2105ed253ef042
+--suite APILearn.Robot DemoAPI.TestCasesAPIRequests
+--suite APILearn.Suite2
+--suite APILearn.fakeAPI
